@@ -17,11 +17,13 @@ public class Job {
     //  other five fields. The second constructor should also call the first in order to initialize
     //  the 'id' field.
 
-    public Job(int id) {
-        this.id = id;
+    public Job() {
+        id = nextId;
+        nextId++;
     }
 
     public Job(String name, Employer employer, Location location, PositionType positionType, CoreCompetency coreCompetency) {
+        this();
         this.name = name;
         this.employer = employer;
         this.location = location;
@@ -92,5 +94,19 @@ public class Job {
 
     public void setCoreCompetency(CoreCompetency coreCompetency) {
         this.coreCompetency = coreCompetency;
+    }
+
+    @Override
+    public String toString() {
+        return
+                System.lineSeparator()+ "ID: " + id + System.lineSeparator()+
+                "Name: " + name +System.lineSeparator()+
+                "Employer: " + employer +System.lineSeparator()+
+                "Location: " + location +System.lineSeparator()+
+                "Position Type: " + positionType +System.lineSeparator()+
+                "Core Competency: " + coreCompetency +System.lineSeparator()
+                ;
+
+        //return System.lineSeparator();
     }
 }
