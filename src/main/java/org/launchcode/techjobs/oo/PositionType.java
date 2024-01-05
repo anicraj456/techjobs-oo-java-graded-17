@@ -54,8 +54,8 @@ public class PositionType extends JobField {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        PositionType that = (PositionType) o;
-        return getId() == that.getId();//&& Objects.equals(value, that.value);
+        PositionType positionType = (PositionType) o;
+        return getId() == positionType.getId();//&& Objects.equals(value, that.value);
     }
 
     @Override
